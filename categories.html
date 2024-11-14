@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WakeCup Categories</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Box Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #1b1b1b;
+        }
+        
+        .home {
+            background: url(img/bg1.png);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">
+            <img src="img/logo.png" alt="">
+        </a>
+        <ul class="navbar">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/categories.html">Categories</a></li>
+            <li><a href="/products.html">Products</a></li>
+        </ul>
+    </header>
+    <section class="table" id="categories">
+        <table class="cat-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date Created</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- New rows will be inserted here -->
+            </tbody>
+            <tfoot>
+                <!-- Insert Add New Button here  -->
+            </tfoot>
+        </table>
+    </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span><br>
+            <form id="categoryForm" action=",/add_category.php" method="post">
+                <input type="hidden" id="categoryId" name="id">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="description">Description</label><br>
+                <input type="text" id="description" name="description"><br>
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select><br><br>
+                <input type="submit" value="Submit" id="submit">
+            </form>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
